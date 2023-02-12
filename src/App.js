@@ -1,24 +1,15 @@
-import React, { useRef, useState } from 'react'
-import { useSprings, animated } from '@react-spring/web'
-import useMeasure from 'react-use-measure'
-import { useDrag } from 'react-use-gesture'
-import clamp from 'lodash.clamp'
-import { Box, Card, Typography, Menu, MenuItem, ListItemIcon, ListItemText } from '@mui/material'
+import React, { useState } from 'react'
+import { Box, Menu, MenuItem, ListItemIcon, ListItemText } from '@mui/material'
 import styles from './styles.module.css'
-import NewsCard from './components/News'
-import NewsQuery from './hooks/useNews'
 import useNews from './hooks/useNews'
 import Viewpager from './components/Viewpager'
-import usePost from './hooks/useNews'
 import Language from './components/Language'
 import IconButton from '@mui/material/IconButton'
 import TranslateRoundedIcon from '@mui/icons-material/TranslateRounded'
 import LightModeRoundedIcon from '@mui/icons-material/LightModeRounded'
 import DarkModeRoundedIcon from '@mui/icons-material/DarkModeRounded'
-import Popover from '@mui/material/Popover'
 import Slide from '@mui/material/Slide'
 import DoneIcon from '@mui/icons-material/Done'
-import WidgetsRoundedIcon from '@mui/icons-material/WidgetsRounded'
 import { RiMenu3Fill } from 'react-icons/ri'
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -43,7 +34,7 @@ export default function App() {
   const open = Boolean(anchorEl)
   const id = open ? 'simple-popover' : undefined
 
-  const { status, data, error, isFetching } = useNews(newsLanguage)
+  const { status, data } = useNews(newsLanguage)
 
   if (!newsLanguage) {
     return <Language setNewsLanguage={setNewsLanguage} availableLanguage={availableLanguage} />
