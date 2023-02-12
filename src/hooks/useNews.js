@@ -7,18 +7,14 @@ const getPostByLanguage = async language => {
     'Content-Type': 'application/json',
   }
 
-  const { data } = await axios
-    .get(
-      `https://ec2-3-71-35-71.eu-central-1.compute.amazonaws.com/api/posts/getArticles/?language=${language}&date=baarta`,
-      {
-        headers: headersList,
-      }
-    )
-    .catch(function (error) {
-      // handle error
-      console.log(error)
-    })
-  const newsData = JSON.parse(data.response)
+  const { data } = await axios.get(
+    `https://ec2-3-71-35-71.eu-central-1.compute.amazonaws.com/api/posts/getArticles/?language=${language}&date=baarta`,
+    {
+      headers: headersList,
+    }
+  )
+
+  const newsData = JSON.parse(data.body)
   return newsData
 }
 
