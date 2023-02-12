@@ -8,7 +8,6 @@ const getPostByLanguage = async language => {
       {
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'https://baarta.vercel.app/',
         },
       }
     )
