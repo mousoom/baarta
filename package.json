@@ -1,10 +1,9 @@
 {
   "name": "baarta",
-  "proxy":"https://ec2-3-71-35-71.eu-central-1.compute.amazonaws.com/",
   "description": "",
   "keywords": [],
   "version": "1.0.0",
-  "main": "src/index.tsx",
+  "main": "src/index.js",
   "dependencies": {
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
